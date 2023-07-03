@@ -3,7 +3,7 @@ C_FLAGS = -c
 OPT_FLAGS = -O3
 DBG_FLAGS = -g -fsanitize=address -DDEBUG
 
-APP = day2
+APP = day3
 BIN_DIR = ./bin
 SOURCE_DIR = ./src
 
