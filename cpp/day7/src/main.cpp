@@ -1,5 +1,7 @@
 #include <fstream>
 #include <iostream>
+#include <stack>
+#include <vector>
 
 void part1(std::string filename);
 
