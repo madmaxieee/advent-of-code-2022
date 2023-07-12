@@ -1,6 +1,8 @@
 mod day01;
 
-pub fn noop(_: String) {}
+pub fn noop(_: String) {
+    println!("Not implemented");
+}
 
 pub type DayFunction = fn(String);
 

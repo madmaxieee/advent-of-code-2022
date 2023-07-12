@@ -9,10 +9,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = env::args().collect();
     assert!(args.len() == 2, "Usage: cargo run <day>");
 
-    let day = args[1].parse::<u8>()?;
+    let day: u8 = match args[1].parse() {
+        Ok(day) => day,
+        Err(_) => panic!("Day must be a number"),
+    };
     assert!(day >= 1 && day <= 25, "Day must be between 1 and 25");
 
-    let input = fs::read_to_string(format!("inputs/day{:02}.txt", day))?;
+    let file_name = format!("inputs/day{:02}.txt", day);
+    let input = match fs::read_to_string(file_name.clone()) {
+        Ok(input) => input,
+        Err(_) => panic!("Could not read file {}", file_name.clone()),
+    };
 
     let (part1, part2) = get_day(day);
 
