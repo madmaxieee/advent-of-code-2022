@@ -9,9 +9,9 @@ pub fn part1(input: String) {
             .split('-')
             .map(|s| s.parse::<usize>().unwrap())
             .collect::<Vec<_>>();
-        if interval1[0] <= interval2[0] && interval2[1] <= interval1[1] {
-            acc + 1
-        } else if interval2[0] <= interval1[0] && interval1[1] <= interval2[1] {
+        if (interval1[0] <= interval2[0] && interval2[1] <= interval1[1])
+            || (interval2[0] <= interval1[0] && interval1[1] <= interval2[1])
+        {
             acc + 1
         } else {
             acc
@@ -31,9 +31,9 @@ pub fn part2(input: String) {
             .split('-')
             .map(|s| s.parse::<usize>().unwrap())
             .collect::<Vec<_>>();
-        if interval1[0] <= interval2[0] && interval2[0] <= interval1[1] {
-            acc + 1
-        } else if interval2[0] <= interval1[0] && interval1[0] <= interval2[1] {
+        if (interval1[0] <= interval2[0] && interval2[0] <= interval1[1])
+            || (interval2[0] <= interval1[0] && interval1[0] <= interval2[1])
+        {
             acc + 1
         } else {
             acc
