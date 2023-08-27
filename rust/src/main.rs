@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Ok(day) => day,
         Err(_) => panic!("Day must be a number"),
     };
-    assert!(day >= 1 && day <= 25, "Day must be between 1 and 25");
+    assert!((1..=25).contains(&day), "Day must be between 1 and 25");
 
     let file_name = format!("inputs/day{:02}.txt", day);
     let input = match fs::read_to_string(file_name.clone()) {
@@ -29,7 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);
 
-    println!("");
+    println!();
 
     println!("Part 2:");
     let start = Instant::now();
