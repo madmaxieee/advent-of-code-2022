@@ -48,9 +48,9 @@ pub fn part2(input: String) {
 
 fn get_index(c: char) -> usize {
     let ascii = c as u8;
-    if b'A' <= ascii && ascii <= b'Z' {
+    if ascii.is_ascii_uppercase() {
         (ascii - b'A' + 26) as usize
-    } else if b'a' <= ascii && ascii <= b'z' {
+    } else if ascii.is_ascii_lowercase() {
         (ascii - b'a') as usize
     } else {
         panic!("Invalid character");

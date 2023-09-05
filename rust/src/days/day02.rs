@@ -3,7 +3,7 @@ pub fn part1(input: String) {
 
     let mut score: isize = 0;
     lines.for_each(|line| {
-        if line.len() == 0 {
+        if line.is_empty() {
             return;
         }
         let line: Vec<char> = line.chars().collect();
@@ -30,7 +30,7 @@ pub fn part2(input: String) {
 
     let mut score: isize = 0;
     lines.for_each(|line| {
-        if line.len() == 0 {
+        if line.is_empty() {
             return;
         }
         let line: Vec<char> = line.chars().collect();
