@@ -11,6 +11,7 @@ mod day10;
 mod day11;
 mod day12;
 mod day13;
+mod day14;
 
 pub fn noop(_: String) {
     println!("Not implemented");
@@ -33,6 +34,7 @@ pub fn get_day(day: u8) -> (DayFunction, DayFunction) {
         11 => (day11::part1, day11::part2),
         12 => (day12::part1, day12::part2),
         13 => (day13::part1, day13::part2),
+        14 => (day14::part1, day14::part2),
         _ => (noop, noop),
     }
 }
